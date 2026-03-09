@@ -1,9 +1,5 @@
 # Qubit: uma introdução visual
 
-Estrutura inicial para transformar o repositório `livroqubit/1qubitintro` em uma página pública com GitHub Pages.
-
-## Estrutura sugerida
-
 - `index.html` — página principal
 - `codigos/` — exemplos e implementações
 - `erratas/` — correções por edição e capítulo

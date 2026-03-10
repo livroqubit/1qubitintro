@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Códigos | Qubit: uma introdução visual</title>
   <link rel="stylesheet" href="../assets/styles.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
 
   <script>
     window.MathJax = {
@@ -51,10 +52,7 @@
           <h2>Tutorial — Executando o código no Google Colab</h2>
 
           <h3>Passo 1</h3>
-          <p>Acesse o endereço:</p>
-          <p style="text-align:center;">
-            <code>https://colab.research.google.com</code>
-          </p>
+          <p>Acesse o endereço: <a href="https://colab.research.google.com" target="_blank">Google Colab</a></p>
           <p>
             Será aberta uma nova janela com o ambiente Google Colab. Caso seja solicitado,
             faça login com sua conta Google.
@@ -73,7 +71,13 @@
             necessárias. Atenção: certifique-se de que você selecionou todo o texto para copiar:
           </p>
 
-          <pre><code>!pip install qiskit qiskit-aer</code></pre>
+          <div class="code-wrapper wrap-code">
+            <div class="code-header">
+              <span class="code-language">python</span>
+              <button class="copy-button">Copiar</button>
+            </div>
+            <pre><code class="language-python">!pip install qiskit qiskit-aer</code></pre>
+          </div>
 
           <h3>Passo 4</h3>
           <p>
@@ -101,18 +105,25 @@
             <strong>Atenção:</strong> certifique-se de que você copiou todas as linhas e observe
             onde termina o código.
           </p>
-
-<pre><code># ============================================================
-# =================== Início do Código =======================
-#
-import numpy as np
+         
+          <h4>Início do Código</h4>
+          <div class="code-wrapper wrap-code">
+            <div class="code-header">
+              <span class="code-language">python</span>
+              <button class="copy-button">Copiar</button>
+            </div>
+            <pre><code class="language-python">import numpy as np
 from qiskit.quantum_info import Statevector
-from IPython.display import display, Latex
+from IPython.display import display, Latex</code></pre>
+          </div>
 
-# ============================================================
-# 1) Parâmetros em graus (Modifique aqui!)
-# ============================================================
-# Insira aqui o valor escolhido para θ, dado em graus
+          <h4>1. Parâmetros em graus (Modifique aqui!)</h4>
+          <div class="code-wrapper wrap-code">
+            <div class="code-header">
+              <span class="code-language">python</span>
+              <button class="copy-button">Copiar</button>
+            </div>
+            <pre><code class="language-python"># Insira aqui o valor escolhido para θ, dado em graus
 theta_deg = 30
 
 # Insira aqui o valor escolhido para φ, dado em graus
@@ -120,82 +131,114 @@ phi_deg   = 90
 
 print("Ângulos escolhidos (em graus):")
 print(f"θ = {theta_deg} graus")
-print(f"φ = {phi_deg} graus")
+print(f"φ = {phi_deg} graus")</code></pre>
+          </div>
 
-# ============================================================
-# 2) Conversão para radianos
-# ============================================================
-theta = np.deg2rad(theta_deg)
+          <h4>2. Conversão para radianos</h4>
+          <div class="code-wrapper wrap-code">
+            <div class="code-header">
+              <span class="code-language">python</span>
+              <button class="copy-button">Copiar</button>
+            </div>
+            <pre><code class="language-python">theta = np.deg2rad(theta_deg)
 phi   = np.deg2rad(phi_deg)
 
 print("\nÂngulos convertidos (em radianos):")
 print(f"θ = {theta:.12f} rad")
-print(f"φ = {phi:.12f} rad")
+print(f"φ = {phi:.12f} rad")</code></pre>
+          </div>
 
-# ============================================================
-# 3) Forma canônica do estado
-# ============================================================
-alpha = np.cos(theta/2)
+          <h4>3. Coeficientes (forma canônica)</h4>
+          <div class="code-wrapper wrap-code">
+            <div class="code-header">
+              <span class="code-language">python</span>
+              <button class="copy-button">Copiar</button>
+            </div>
+            <pre><code class="language-python">alpha = np.cos(theta/2)
 beta  = np.exp(1j*phi) * np.sin(theta/2)
 
 print("\nCoeficientes (forma canônica):")
 print(f"α = {alpha}")
-print(f"β = {beta}")
+print(f"β = {beta}")</code></pre>
+          </div>
 
-# ============================================================
-# 4) Verificação da normalização
-# ============================================================
-norm = abs(alpha)**2 + abs(beta)**2
+          <h4>4. Verificação da normalização</h4>
+          <div class="code-wrapper wrap-code">
+            <div class="code-header">
+              <span class="code-language">python</span>
+              <button class="copy-button">Copiar</button>
+            </div>
+            <pre><code class="language-python">norm = abs(alpha)**2 + abs(beta)**2
 
 print("\nVerificação da normalização:")
-print(f"|α|² + |β|² = {norm:.12f}")
+print(f"|α|² + |β|² = {norm:.12f}")</code></pre>
+          </div>
 
-# ============================================================
-# 5) Estado em LaTeX (forma simbólica)
-# ============================================================
-display(Latex(
+          <h4>5. Estado em LaTeX (forma simbólica)</h4>
+          <div class="code-wrapper wrap-code">
+            <div class="code-header">
+              <span class="code-language">python</span>
+              <button class="copy-button">Copiar</button>
+            </div>
+            <pre><code class="language-python">display(Latex(
 r"$$|\psi\rangle="
 r"\cos\!\left(\frac{\theta}{2}\right)|0\rangle"
 r"+e^{i\phi}\sin\!\left(\frac{\theta}{2}\right)|1\rangle.$$"
-))
+))</code></pre>
+          </div>
 
-# ============================================================
-# 6) Valores numéricos
-# ============================================================
-display(Latex(
+          <h4>6. Valores numéricos</h4>
+          <div class="code-wrapper wrap-code">
+            <div class="code-header">
+              <span class="code-language">python</span>
+              <button class="copy-button">Copiar</button>
+            </div>
+            <pre><code class="language-python">display(Latex(
 rf"$$\theta={theta_deg}^\circ={theta:.6f}\,\mathrm{{rad}},\quad "
 rf"\phi={phi_deg}^\circ={phi:.6f}\,\mathrm{{rad}}.$$"
-))
+))</code></pre>
+          </div>
 
-# ============================================================
-# 7) Forma expandida
-# ============================================================
-beta_r = 0.0 if abs(beta.real) &lt; 1e-12 else beta.real
+          <h4>7. Forma expandida</h4>
+          <div class="code-wrapper wrap-code">
+            <div class="code-header">
+              <span class="code-language">python</span>
+              <button class="copy-button">Copiar</button>
+            </div>
+            <pre><code class="language-python">beta_r = 0.0 if abs(beta.real) &lt; 1e-12 else beta.real
 beta_i = 0.0 if abs(beta.imag) &lt; 1e-12 else beta.imag
 
 display(Latex(
 rf"$$|\psi\rangle="
 rf"{alpha.real:.6f}|0\rangle+"
 rf"\left({beta_r:.6f}{beta_i:+.6f}i\right)|1\rangle.$$"
-))
+))</code></pre>
+          </div>
 
-# ============================================================
-# 8) Statevector
-# ============================================================
-psi = Statevector([alpha, beta])
+          <h4>8. Statevector</h4>
+          <div class="code-wrapper wrap-code">
+            <div class="code-header">
+              <span class="code-language">python</span>
+              <button class="copy-button">Copiar</button>
+            </div>
+            <pre><code class="language-python">psi = Statevector([alpha, beta])
 
 print("\nVetor de estado no Qiskit:")
-print(psi)
+print(psi)</code></pre>
+          </div>
 
-# ============================================================
-# 9) Fase relativa
-# ============================================================
-print("\nFase relativa física:")
+          <h4>9. Fase relativa</h4>
+          <div class="code-wrapper wrap-code">
+            <div class="code-header">
+              <span class="code-language">python</span>
+              <button class="copy-button">Copiar</button>
+            </div>
+            <pre><code class="language-python">print("\nFase relativa física:")
 print(f"φ = {phi:.12f} rad")
-print(f"φ = {phi_deg} graus")
+print(f"φ = {phi_deg} graus")</code></pre>
+          </div>
 
-# ============================================================
-# =================== Fim do Código ==========================</code></pre>
+
 
           <h3>Resultado</h3>
           <p>
@@ -347,14 +390,14 @@ phi_deg = 0</code></pre>
 
           <p><strong>Recomece no Passo 5.</strong></p>
 
-<pre><code># ============================================================
-# =================== Início do Código =======================
-#
-# ============================================================
-# Desenho, salvamento e download automático do PDF
-# ============================================================
 
-from qiskit.visualization import plot_bloch_multivector
+          <h4>Desenho, salvamento e download automático do PDF</h4>
+          <div class="code-wrapper wrap-code">
+            <div class="code-header">
+              <span class="code-language">python</span>
+              <button class="copy-button">Copiar</button>
+            </div>
+            <pre><code class="language-python">from qiskit.visualization import plot_bloch_multivector
 from IPython.display import display
 from google.colab import files
 
@@ -376,10 +419,8 @@ fig.savefig(nome_pdf, bbox_inches="tight")
 print(f"Figura salva como {nome_pdf}")
 
 # Faz download automático no Colab
-files.download(nome_pdf)
-
-# ============================================================
-# =================== Fim do Código ==========================</code></pre>
+files.download(nome_pdf)</code></pre>
+          </div>
 
           <h3>Resultado</h3>
           <p>
@@ -449,5 +490,38 @@ files.download(nome_pdf)
       </div>
     </div>
   </main>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+  <script>
+    document.querySelectorAll('.copy-button').forEach(button => {
+      button.addEventListener('click', async () => {
+        const codeWrapper = button.closest('.code-wrapper');
+        const codeText = codeWrapper.querySelector('code').innerText;
+
+        try {
+          await navigator.clipboard.writeText(codeText);
+          
+          const originalText = button.innerText;
+          button.innerText = 'Copiado!';
+          button.style.backgroundColor = '#d1e7dd';
+          button.style.color = '#0f5132';
+          button.style.borderColor = '#badbcc';
+
+          setTimeout(() => {
+            button.innerText = originalText;
+            button.style.backgroundColor = '#ffffff';
+            button.style.color = '#495057';
+            button.style.borderColor = '#ced4da';
+          }, 2000);
+        } catch (err) {
+          console.error('Falha ao copiar o texto: ', err);
+          button.innerText = 'Erro';
+        }
+      });
+    });
+  </script>
 </body>
 </html>

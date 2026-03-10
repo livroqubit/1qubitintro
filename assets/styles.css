@@ -199,3 +199,64 @@ h2 {
     padding: 3rem 0;
   }
 }
+
+h4 {
+  font-size: 1.0rem;
+  margin-top: 30px;
+  color: #2c3e50;
+}
+
+.code-wrapper {
+  background-color: #f8f9fa; 
+  border: 1px solid #e9ecef; 
+  border-radius: 8px;
+  margin: 15px 0;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e9ecef; 
+  padding: 8px 16px;
+  color: #495057;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #dee2e6;
+  font-weight: 600;
+}
+
+.copy-button {
+  background: #ffffff;
+  border: 1px solid #ced4da;
+  color: #495057;
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.copy-button:hover {
+  background-color: #e2e6ea;
+  color: #212529;
+}
+
+pre {
+  margin: 0;
+  padding: 16px;
+  font-size: 0.95rem;
+  background-color: transparent !important; 
+}
+
+.scroll-code pre code {
+  white-space: pre; 
+  overflow-x: auto; 
+}
+
+.wrap-code pre code {
+  white-space: pre-wrap; 
+  word-break: break-all; 
+  overflow-x: hidden; 
+}
